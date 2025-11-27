@@ -1,0 +1,294 @@
+/* banner区域：首页顶部轮播图区域 */
+.banner{
+  background-color: #f5f5f5; /* 背景色为浅灰色 */
+}
+.banner .wrapper{
+  display: flex; /* flex布局，侧导航与轮播图横向排列 */
+  position: relative; /* 相对定位，用于子元素（如圆点）绝对定位 */
+}
+
+/* 侧导航：banner左侧的分类导航 */
+.subnav{
+  width: 250px; /* 侧导航宽度 */
+  background-color: rgba(0, 0, 0,0.6); /* 背景色为半透明黑色 */
+}
+.subnav li{
+  display: flex; /* flex布局，内容横向排列 */
+  height: 50px; /* 每个导航项高度 */
+  padding: 14px 12px 14px 29px; /* 内边距，控制内容位置 */
+  position: relative; /* 相对定位，用于图标绝对定位 */
+}
+.subnav a,
+.subnav .iconfont{
+  color: #fff; /* 文字和图标颜色为白色 */
+  font-size: 14px; /* 字体大小 */
+  line-height: 22px; /* 行高，垂直居中 */
+}
+.subnav a{
+  margin-right: 5px; /* 链接右侧外边距 */
+}
+.subnav h4{
+  font-weight: 500; /* 字重稍粗 */
+  font-size: 16px; /* 标题文字大小 */
+  margin-right: 14px; /* 右侧外边距 */
+}
+.subnav .iconfont{
+  position: absolute; /* 绝对定位，相对于li */
+  top: 50%; /* 距离顶部50% */
+  right: 12px; /* 距离右侧12px */
+  transform: translateY(-50%); /* 垂直方向居中 */
+}
+
+/* 轮播图：banner右侧的图片轮播区域 */
+.pic{
+  display: flex; /* flex布局 */
+  width: 990px; /* 轮播图宽度 */
+  overflow: hidden; /* 隐藏超出部分，实现单张图片显示 */
+}
+.pic img{
+  width: 990px; /* 图片宽度与轮播区域一致 */
+}
+
+/* 圆点：轮播图底部的指示器 */
+.banner ol{
+  display: flex; /* 圆点横向排列 */
+  position: absolute; /* 绝对定位，相对于banner的wrapper */
+  bottom: 0; /* 距离底部0 */
+  right: 0; /* 距离右侧0 */
+}
+.banner ol li{
+  width: 22px; /* 圆点容器宽度 */
+  height: 22px; /* 圆点容器高度 */
+  border-radius: 50%; /* 圆形 */
+  margin-right: 8px; /* 右侧外边距，圆点间距 */
+  margin-bottom: 16px; /* 底部外边距，距离底部16px */
+  position: relative; /* 相对定位，用于内部圆点绝对定位 */
+}
+.banner i{
+  display: block; /* 转为块元素 */
+  width: 14px; /* 内部圆点宽度 */
+  height: 14px; /* 内部圆点高度 */
+  border-radius: 50%; /* 圆形 */
+  background-color: rgba(255, 255, 255, 0.6); /* 背景色为半透明白色 */
+  position: absolute; /* 绝对定位，相对于li */
+  top: 50%; /* 顶部50% */
+  left: 50%; /* 左侧50% */
+  transform: translate(-50%,-50%); /* 水平垂直居中 */
+}
+/* 点击圆点，给 li 和 i 分别添加背景颜色属性（激活状态） */
+.active{
+  background-color: rgba(255, 255, 255, 0.5); /* 激活时外层圆点背景色 */
+}
+.active i{
+  background-color: rgb(255, 255, 255); /* 激活时内层圆点背景色（白色） */
+}
+
+/* 新鲜好物：商品展示区域 */
+.goods{
+  background-color: #fff; /* 背景色白色 */
+}
+.goods .title, .brand .title, .fresh .title{
+  display: flex; /* flex布局，标题内容横向排列 */
+  align-items: center; /* 垂直居中对齐 */
+  position: relative; /* 相对定位，用于右侧链接绝对定位 */
+}
+.goods .title{
+  height: 102px; /* 标题区域高度 */
+  margin-top: 10px; /* 顶部外边距 */
+}
+.title h3{
+  font-size: 30px; /* 标题文字大小 */
+  line-height: 42px; /* 行高 */
+  margin-right: 35px; /* 右侧外边距 */
+}
+.title p,
+.title a,
+.title .iconfont{
+  color: #A1A1A1; /* 文字和图标颜色为浅灰色 */
+}
+.title p{
+  position: relative; /* 相对定位 */
+  bottom: -8px; /* 向下偏移8px */
+}
+.title .all{
+  position: absolute; /* 绝对定位，相对于title */
+  right: 0; /* 靠右对齐 */
+}
+.goods .title .iconfont{
+  margin-left: 10px; /* 图标左侧外边距 */
+}
+/* 内容区域：商品列表 */
+.goods ul{
+  display: flex; /* 商品横向排列 */
+  justify-content: space-between; /* 均匀分布，两端对齐 */
+}
+.goods ul li{
+  width: 304px; /* 每个商品项宽度 */
+}
+.goods ul img{
+  height: 304px; /* 商品图片高度 */
+}
+.goods .price{
+  height: 100px; /* 价格区域高度 */
+}
+.bd .price{
+  background-color: #EEF9F4; /* 特定商品价格区域背景色 */
+}
+.goods .price p{
+  text-align: center; /* 价格文字居中 */
+  font-size: 22px; /* 价格文字大小 */
+  color: #AA2113; /* 价格颜色为红色 */
+}
+.goods .price a{
+  display: block; /* 链接转为块元素 */
+  font-size: 20px; /* 商品名称文字大小 */
+  padding: 17px 0 4px; /* 上下内边距 */
+}
+.recommend .price p{
+  font-size: 16px; /* 推荐商品价格文字大小 */
+  color: #A1A1A1; /* 推荐商品价格颜色为浅灰色 */
+  padding-bottom: 6px; /* 底部内边距 */
+}
+.recommend{
+  margin-bottom: 60px; /* 底部外边距，与下方区域拉开距离 */
+}
+
+/* 热门品牌：品牌展示区域 */
+.brand{
+  height: 468px; /* 品牌区域总高度 */
+  background-color: #f1f1f1; /* 背景色为浅灰色 */
+}
+.brand .title{
+  height: 122px; /* 标题区域高度 */
+}
+.title .jiantou{
+  position: absolute; /* 绝对定位，相对于title */
+  right: 0; /* 靠右对齐 */
+  bottom: 15px; /* 距离底部15px */
+}
+.jiantou .left, .jiantou .right{
+  display: inline-block; /* 转为行内块，可设置宽高 */
+  width: 20px; /* 按钮宽度 */
+  height: 20px; /* 按钮高度 */
+  background-color: #e4e4e4; /* 按钮背景色 */
+  line-height: 20px; /* 行高等于高度，文字垂直居中 */
+  text-align: center; /* 文字水平居中 */
+}
+.jiantou .left{
+  margin-right: 12px; /* 左侧按钮右侧外边距 */
+}
+.jiantou .iconfont{
+  color: #fff; /* 图标颜色为白色 */
+}
+.jiantou span:hover{
+  background-color: #5EB69C; /* 鼠标悬停时按钮背景色变为绿色 */
+}
+.brand ul{
+  display: flex; /* 品牌横向排列 */
+  justify-content: space-between; /* 均匀分布 */
+}
+
+/* 生鲜：生鲜商品展示区域 */
+.fresh{
+  padding-top: 20px; /* 顶部内边距 */
+}
+.fresh .title{
+  margin-top: 40px; /* 顶部外边距 */
+  margin-bottom: 20px; /* 底部外边距 */
+  position: relative; /* 相对定位，用于子元素绝对定位 */
+}
+.fresh .title ul{
+  display: flex; /* 子导航横向排列 */
+  position: absolute; /* 绝对定位，相对于title */
+  right: 134px; /* 距离右侧134px */
+}
+.fresh .title ul a{
+  display: block; /* 链接转为块元素 */
+  height: 22px; /* 链接高度 */
+  line-height: 22px; /* 行高等于高度，垂直居中 */
+  color: #333; /* 文字颜色为深灰色 */
+  padding: 0 7px; /* 左右内边距 */
+  margin-right: 6px; /* 右侧外边距 */
+}
+.fresh .title ul a:hover{
+  background-color: #5EB69C; /* 鼠标悬停时背景色为绿色 */
+  color: #fff; /* 文字颜色为白色 */
+}
+.fresh .content{
+  display: flex; /* 内容区域横向排列（左侧大图与右侧列表） */
+}
+.fresh .content .left{
+  width: 248px; /* 左侧宽度 */
+  height: 610px; /* 左侧高度 */
+  margin-right: 24px; /* 右侧外边距，与右侧内容拉开距离 */
+}
+.fresh .content .right ul{
+  display: flex; /* 右侧商品横向排列 */
+  width: 968px; /* 右侧总宽度 */
+  flex-wrap: wrap; /* 自动换行，实现多行展示 */
+}
+.fresh .content .right li{
+  width: 242px; /* 每个商品项宽度 */
+  height: 305px; /* 每个商品项高度 */
+  padding: 0 26px; /* 左右内边距 */
+}
+.fresh .content .right img{
+  width: 190px; /* 商品图片宽度 */
+  height: 171px; /* 商品图片高度 */
+  margin: 14.5px 0; /* 上下外边距 */
+}
+.fresh .content .right a{
+  display: block; /* 商品名称链接转为块元素 */
+  width: 192px; /* 链接宽度 */
+  line-height: 19px; /* 行高，控制文字行间距 */
+}
+.fresh .content .right span{
+  font-size: 22px; /* 价格文字大小 */
+  line-height: 45px; /* 行高 */
+  color: #AF2F22; /* 价格颜色为红色 */
+}
+.fresh .content .right i{
+  font-size: 16px; /* 辅助文字大小 */
+  margin-right: 4px; /* 右侧外边距 */
+}
+
+/* 最新专题：专题内容展示区域 */
+.topic{
+  padding-top: 70px; /* 顶部内边距 */
+}
+.topic .title{
+  margin: 30px 0; /* 上下外边距 */
+  position: relative; /* 相对定位 */
+}
+.topic ul{
+  height: 395px; /* 专题列表高度 */
+  display: flex; /* 专题项横向排列 */
+}
+.topic li img{
+  display: block; /* 图片转为块元素，去除底部间隙 */
+  width: 405px; /* 图片宽度 */
+  height: 288px; /* 图片高度 */
+  margin-bottom: 23px; /* 底部外边距，与文字拉开距离 */
+}
+.topic div{
+  position: relative; /* 相对定位，用于图标绝对定位 */
+}
+.topic div span{
+  margin-left: 15px; /* 左侧外边距 */
+  margin-right: 5px; /* 右侧外边距 */
+  font-size: 14px; /* 文字大小 */
+  line-height: 20px; /* 行高 */
+}
+.topic div i{
+  font-size: 14px; /* 辅助文字大小 */
+}
+.topic div .iconfont{
+  font-size: 16px; /* 图标大小 */
+  color: #888; /* 图标颜色为灰色 */
+}
+.topic div .iconfont:last-child{
+  position: absolute; /* 绝对定位，相对于div */
+  right: 0; /* 靠右对齐 */
+  top: 50%; /* 顶部50% */
+  transform: translateY(-50%); /* 垂直居中 */
+}

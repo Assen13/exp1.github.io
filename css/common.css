@@ -1,0 +1,203 @@
+/* 头尾各个页面相同的样式 */
+/* 版心：设置页面内容的固定宽度并居中，统一页面布局范围 */
+.wrapper {
+  margin: 0 auto; /* 水平居中 */
+  width: 1240px; /* 版心宽度固定为1240px */
+}
+
+/* 快捷导航 shortcut：页面顶部的快捷链接区域 */
+.shortcut {
+  height: 52px; /* 快捷导航高度 */
+  background-color: #333; /* 背景色为深灰色 */
+}
+.shortcut .wrapper {
+  display: flex; /* 使用flex布局 */
+  justify-content: flex-end; /* 内容靠右对齐 */
+  height: 52px; /* 继承父元素高度，保证内容垂直居中 */
+}
+.shortcut ul{
+  height: 52px; /* 与父元素高度一致 */
+  display: flex; /* 列表项横向排列 */
+}
+.shortcut li{
+  margin-top: 20px; /* 顶部外边距，控制垂直位置 */
+  height: 14px; /* 列表项高度 */
+  padding: 0 15px; /* 左右内边距，拉开项间距 */
+  border-right: 0.5px solid #999; /* 右侧分隔线，灰色细边框 */
+}
+.shortcut li:last-child{
+  border: none; /* 最后一个列表项去除右侧边框 */
+}
+.shortcut li a{
+  display: block; /* 将链接转为块元素，便于点击 */
+  color: #fff; /* 链接文字为白色 */
+  height: 14px; /* 与列表项高度一致 */
+  line-height: 14px; /* 行高等于高度，垂直居中 */
+  font-size: 14px; /* 字体大小14px */
+}
+.shortcut li a:hover{
+  color: #5EB69C; /* 鼠标悬停时链接变为绿色 */
+}
+.shortcut li span{
+  vertical-align: middle; /* 垂直居中对齐 */
+}
+
+/* 头部区域 header：包含logo、导航、搜索框、购物车 */
+.header{
+  display: flex; /* flex布局，子元素横向排列 */
+  height: 88px; /* 头部高度 */
+  margin-top: 22px; /* 顶部外边距 */
+  margin-bottom: 22px; /* 底部外边距 */
+}
+/* logo区域 */
+.header .logo{
+  width: 200px; /* logo宽度 */
+  margin-right: 40px; /* 右侧外边距，与导航拉开距离 */
+  background-image: url(../images/logo.png); /* 设置logo背景图 */
+}
+.header h1 a{
+  display: block; /* 链接转为块元素，占满logo区域 */
+  width: 200px; /* 与logo宽度一致 */
+  height: 88px; /* 与头部高度一致 */
+  font-size: 0; /* 隐藏h1文字（仅用背景图显示logo） */
+}
+/* 导航区域 */
+.nav{
+  margin-top: 33px; /* 顶部外边距，控制垂直位置 */
+  margin-right: 28px; /* 右侧外边距，与搜索框拉开距离 */
+}
+.nav ul{
+  display: flex; /* 导航项横向排列 */
+}
+.nav li{
+  margin-right: 48px; /* 导航项之间的间距 */
+}
+.nav a{
+  display: block; /* 链接转为块元素 */
+  padding-bottom: 8px; /* 底部内边距，为下划线预留空间 */
+}
+.nav a:hover{
+  border-bottom: 2px solid #5EB69C; /* 鼠标悬停时显示绿色下划线 */
+  color: #5EB69C; /* 文字颜色变为绿色 */
+}
+/* 搜索区域 */
+.search{
+  display: flex; /* flex布局，图标与输入框横向排列 */
+  margin-top: 33px; /* 顶部外边距，控制垂直位置 */
+  margin-right: 27px; /* 右侧外边距，与购物车拉开距离 */
+  width: 170px; /* 搜索框总宽度 */
+  height: 34px; /* 搜索框高度 */
+  border-bottom: 2px solid #F4F4F4; /* 底部边框，浅灰色 */
+  padding-bottom: 4px; /* 底部内边距 */
+}
+.search .iconfont{
+  font-size: 18px; /* 图标大小 */
+  color: #ccc; /* 图标颜色为浅灰色 */
+  margin-right: 8px; /* 右侧外边距，与输入框拉开距离 */
+}
+.search input{
+  width: 0; /* 先重置宽度为0 */
+  flex: 1; /* 弹性分配剩余空间，占满可用宽度 */
+}
+.search input::placeholder{
+  color: #ccc; /* 占位符文字颜色 */
+  height: 22px; /* 占位符高度 */
+  font-size: 16px; /* 占位符字体大小 */
+}
+/* 购物车 cart */
+.cart{
+  position: relative; /* 相对定位，用于子元素绝对定位 */
+  margin-top: 18px; /* 顶部外边距，控制垂直位置 */
+}
+.cart .iconfont{
+  font-size: 35px; /* 购物车图标大小 */
+}
+.cart i{
+  position: absolute; /* 绝对定位，相对于cart */
+  font-size: 12px; /* 数字大小 */
+  line-height: 15px; /* 行高，垂直居中 */
+  color: #fff; /* 文字白色 */
+  top: 4px; /* 距离顶部4px */
+  left: 20px; /* 距离左侧20px */
+  padding: 0 7px; /* 左右内边距 */
+  background-color: #E26237; /* 背景色为橙色 */
+  border-radius: 8px; /* 圆角，使数字框呈椭圆形 */
+}
+
+/* 底部 service：页面底部区域，包含服务、帮助中心、版权信息 */
+.footer{
+  height: 582px; /* 底部总高度 */
+  background-color: #f5f5f5; /* 背景色为浅灰色 */
+}
+/* 服务 */
+.service{
+  height: 179px; /* 服务区域高度 */
+  border-bottom: 1px solid #e8e8e8; /* 底部边框，分隔服务与帮助中心 */
+}
+.service ul{
+  display: flex; /* 服务项横向排列 */
+  height: 179px; /* 与服务区域高度一致 */
+  justify-content: space-evenly; /* 均匀分配空间 */
+  align-items: center; /* 垂直居中对齐 */
+}
+.service li{
+  height: 58px; /* 服务项高度 */
+  background: url(../images/sprite.png) no-repeat; /* 引用精灵图（整合多个小图标） */
+  padding-left: 78px; /* 左侧内边距，为图标预留空间 */
+}
+.service li:nth-child(2){
+  background-position: 0 -58px; /* 第二个服务项图标位置（精灵图偏移） */
+}
+.service li:nth-child(3){
+  background-position: 0 -116px; /* 第三个服务项图标位置 */
+}
+.service li:nth-child(4){
+  background-position: 0 -174px; /* 第四个服务项图标位置 */
+}
+.service h5{
+  line-height: 58px; /* 行高等于高度，垂直居中 */
+  font-size: 28px; /* 文字大小 */
+}
+/* 帮助中心 */
+.help{
+  display: flex; /* flex布局，左右区域横向排列 */
+  justify-content: space-between; /* 左右区域两端对齐 */
+  padding-top: 58px; /* 顶部内边距 */
+  height: 302px; /* 帮助中心高度 */
+}
+.help dt{
+  margin-bottom: 20px; /* 底部外边距，与dd拉开距离 */
+  font-size: 18px; /* 标题文字大小 */
+}
+.help dd a{
+  line-height: 32px; /* 行高，控制文字间距 */
+  color: #969696; /* 链接颜色为灰色 */
+}
+.help dd .iconfont{
+  color: #5EB69C; /* 图标颜色为绿色 */
+}
+.help .right ul{
+  display: flex; /* 右侧图片横向排列 */
+  justify-content: space-between; /* 图片均匀分布 */
+  width: 295px; /* 右侧列表宽度 */
+}
+.help .right img{
+  width: 120px; /* 图片宽度 */
+  height: 120px; /* 图片高度 */
+  margin-bottom: 8px; /* 底部外边距，与文字拉开距离 */
+}
+.help .right p{
+  text-align: center; /* 文字居中 */
+  color: #969696; /* 文字颜色为灰色 */
+}
+/* 版权 */
+.copyright{
+  text-align: center; /* 版权信息居中显示 */
+}
+.copyright p,
+.copyright p a{
+  color: #A1A1A1; /* 版权文字及链接颜色为浅灰色 */
+}
+.copyright p{
+  margin-bottom: 10px; /* 段落底部外边距，拉开行间距 */
+}
