@@ -53,7 +53,7 @@
 .header .logo{
   width: 200px; /* logo宽度 */
   margin-right: 40px; /* 右侧外边距，与导航拉开距离 */
-  background-image: url(../images/logo.png); /* 设置logo背景图 */
+  background-image: url(../images/LOGO.PNG); /* 设置logo背景图 */
 }
 .header h1 a{
   display: block; /* 链接转为块元素，占满logo区域 */
@@ -200,4 +200,5 @@
 }
 .copyright p{
   margin-bottom: 10px; /* 段落底部外边距，拉开行间距 */
+
 }
